@@ -1,0 +1,44 @@
+﻿<Application x:Class="Project1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Project1"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!--Animation when the page is desplayed-->
+        <Style  TargetType="{x:Type Page}">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Storyboard.TargetProperty="Margin" SpeedRatio="5" >
+                            <ThicknessAnimation>
+                                <ThicknessAnimation.From>
+                                    
+                                    <!--To slid : bottom to top-->
+                                    <Thickness
+                                        Left="0" Top="0" Bottom="-525" Right="0"/>
+                                </ThicknessAnimation.From>
+                                
+                                <ThicknessAnimation.To>
+                                    
+                                    <!--To slid : bottom to top-->
+                                    <Thickness
+                                        Left="0" Top="0" Bottom="0" Right="0"/>
+                                    
+                                </ThicknessAnimation.To>
+                            </ThicknessAnimation>
+                            
+                        </Storyboard>
+                    </BeginStoryboard>
+                    
+                </EventTrigger>
+                
+            </Style.Triggers>
+            
+            
+        </Style>
+        
+        <PathGeometry x:Key="showPass"
+                       Figures=""/>
+    </Application.Resources>
+</Application>
